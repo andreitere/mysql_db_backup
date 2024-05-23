@@ -5,7 +5,7 @@ services:
     build: .
     container_name: ${APP_NAME:-mysql_database_backup}-mysql-backup
     volumes:
-      - "mysql_db_backup:/backups"
+      - "db_backup:/backups"
 volumes:
-  mysql_db_backup:
+  db_backup:
     external: true
