@@ -4,7 +4,7 @@ FROM mysql:latest
 ENV BACKUP_DIR=/backups
 
 # Install cron
-RUN apt-get update && apt-get install -y cron
+RUN apt-get update && apt-get install -y cron curl
 
 # Create backup directory
 RUN mkdir -p $BACKUP_DIR
