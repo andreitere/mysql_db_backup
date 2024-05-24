@@ -16,7 +16,7 @@ send_telegram_message() {
 mkdir -p $BACKUP_DIR/$APP_NAME/tmp
 
 # Current date
-DATE=$(date +%Y-%m-%d-%H:%M:%S)
+DATE=$(date +%Y_%m_%d_%H_%M_%S)
 
 # Backup directory
 BACKUP_FILE="$BACKUP_DIR/$APP_NAME/backup_$DATE.tar.gz"

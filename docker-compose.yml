@@ -13,7 +13,6 @@ services:
       - MYSQL_PASSWORD=${MYSQLSWORD}
       - MYSQL_DB=${MYSQLES_DB}
       - MYSQL_HOST=${MYSQL_HOST}
-      - BACKUP_DIR=${BACKUP_DIR}
       - APP_NAME=${APP_NAME}
       - CRON_SCHEDULE=${CRON_SCHEDULE}
     deploy:
