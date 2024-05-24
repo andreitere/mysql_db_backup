@@ -1,11 +1,15 @@
 version: '3.8'
 services:
   nexus:
-    image: mysql_backup
+    image: dckr.cloudcrafts.club/mysql_backup:${VERSION:-latest}
     build: .
     container_name: ${APP_NAME:-mysql_database_backup}-mysql-backup
     volumes:
       - "db_backup:/backups"
+    deploy:
+      resources:
+        limits:
+          memory: "1g"
 volumes:
   db_backup:
     external: true

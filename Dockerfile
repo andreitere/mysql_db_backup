@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM mysql:8.0-debian
 
 # Set environment variables for backup
 ENV BACKUP_DIR=/backups
