@@ -12,6 +12,9 @@ APP_NAME="$APP_NAME"
 CRON_SCHEDULE="$CRON_SCHEDULE"
 EOL
 
+mkdir -p $BACKUP_DIR/$APP_NAME/tmp
+mkdir -p $BACKUP_DIR/$APP_NAME/logs
+
 echo "Setting up cron job with schedule: $CRON_SCHEDULE"
 
 # Create a cron job file
