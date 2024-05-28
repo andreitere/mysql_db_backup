@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   nexus:
-    image: dckr.cloudcrafts.club/mysql_backup:${VERSION:-latest}
+    image: ghcr.io/andreitere/mysql_db_backup:${VERSION:-latest}
     build: .
     container_name: ${APP_NAME:-mysql_database_backup}-mysql-backup
     volumes:
