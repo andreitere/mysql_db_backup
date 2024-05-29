@@ -35,7 +35,7 @@ export MYSQL_PWD="$MYSQL_PASSWORD"
 
 # Dump the schema
 echo "[$(date +%Y-%m-%d_%H:%M:%S)] Dumping schema for $MYSQL_DATABASE on $MYSQL_HOST ..." | tee -a $LOG_FILE
-mysqldump -u$MYSQL_USER -h$MYSQL_HOST --no-data $MYSQL_DATABASE > $SCHEMA_FILE
+mysqldump -u$MYSQL_USER -h$MYSQL_HOST --no-data --events --routines --triggers $MYSQL_DATABASE > $SCHEMA_FILE
 if [ $? -eq 0 ]; then
     echo "Schema dump completed successfully." | tee -a $LOG_FILE
 else
