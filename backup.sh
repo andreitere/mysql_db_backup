@@ -57,7 +57,7 @@ fi
 
 # Archive the dumps
 echo "[$(date +%Y-%m-%d_%H:%M:%S)] Archiving dumps..." | tee -a $LOG_FILE
-tar -czvf $BACKUP_FILE -C $BACKUP_DIR $(basename $SCHEMA_FILE) $(basename $DATA_FILE)
+tar -czvf $BACKUP_FILE -C $BACKUP_DIR/$APP_NAME/tmp/ $(basename $SCHEMA_FILE) $(basename $DATA_FILE)
 if [ $? -eq 0 ]; then
     echo "[$(date +%Y-%m-%d_%H:%M:%S)] Archive created successfully." | tee -a $LOG_FILE
 else
@@ -68,7 +68,7 @@ fi
 # Clean up temporary files
 echo "[$(date +%Y-%m-%d_%H:%M:%S)] Cleaning up temporary files..." | tee -a $LOG_FILE
 ls -l 
-rm $SCHEMA_FILE $DATA_FILE
+rm -rf $BACKUP_DIR/$APP_NAME/tmp/*.sql
 if [ $? -eq 0 ]; then
     echo "[$(date +%Y-%m-%d_%H:%M:%S)] Temporary files removed successfully." | tee -a $LOG_FILE
 else
